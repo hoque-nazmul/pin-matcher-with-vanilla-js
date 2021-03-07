@@ -15,7 +15,7 @@ body {
     padding: 30px;
     text-align: center;
 }
-.generate-btn{
+#generate-btn{
     margin-top: 140px;
     width: 180px;
     padding: 50px;
@@ -27,7 +27,7 @@ body {
     font-size: 20px;
     text-align: center;
 }
-.generate-btn:focus{
+#generate-btn:focus{
     outline: none;
     box-shadow: none;
 }
@@ -97,10 +97,16 @@ color: #E0B612;
     padding: 5px 20px;
 }
 .notify-section{
-    width: 35%;
+    width: 40%;
     margin: 0 auto;
 }
 .action-left {
     color: #FF3C5F;
     margin-top: 10px;
+}
+#error-msg {
+    display: none;
+}
+#success-msg {
+    display: none;
 }
