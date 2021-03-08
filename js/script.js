@@ -7,6 +7,8 @@ const successMsg = document.getElementById('success-msg');
 const errorMsg = document.getElementById('error-msg');
 const emptyMsg = document.getElementById('empty-msg');
 const submitTracker = document.getElementById('action-left');
+const clearBtn = document.getElementById('btn-clear');
+const clearAllBtn = document.getElementById('btn-clear-all');
 let errorSubmitCounter = 0;
 let pin = '';
 
@@ -44,4 +46,15 @@ submitBtn.addEventListener('click', function () {
             submitBtn.setAttribute("disabled", true);
         }
     }
+});
+
+clearBtn.addEventListener('click', () => { 
+    if (pin.length > 0) { 
+        pin = pin.replace(pin[pin.length - 1], '');
+        userPinField.value = pin;
+    }
+});
+
+clearAllBtn.addEventListener('click', () => { 
+    userPinField.value = '';
 });
