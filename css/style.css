@@ -87,6 +87,10 @@ color: #E0B612;
     background: #495BC3;
     color: #fff;
 }
+.submit-btn:disabled {
+    background-color: #667bf3;
+    cursor: not-allowed;
+}
 .notify {
     color: #fff;
     text-align: center;
@@ -100,7 +104,7 @@ color: #E0B612;
     width: 40%;
     margin: 0 auto;
 }
-.action-left {
+#action-left {
     color: #FF3C5F;
     margin-top: 10px;
 }
@@ -108,5 +112,8 @@ color: #E0B612;
     display: none;
 }
 #success-msg {
+    display: none;
+}
+#empty-msg {
     display: none;
 }

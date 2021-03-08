@@ -5,6 +5,9 @@ const userPinField = document.getElementById('user-pin');
 const submitBtn = document.getElementById('btn-submit');
 const successMsg = document.getElementById('success-msg');
 const errorMsg = document.getElementById('error-msg');
+const emptyMsg = document.getElementById('empty-msg');
+const submitTracker = document.getElementById('action-left');
+let errorSubmitCounter = 0;
 let pin = '';
 
 const displayMsg = (msg) => { 
@@ -30,6 +33,15 @@ submitBtn.addEventListener('click', function () {
     if (generatedPin.value && pin && generatedPin.value === pin) {
         displayMsg(successMsg);
     } else { 
-        displayMsg(errorMsg);
+        if (!pin) {
+            displayMsg(emptyMsg);
+        } else { 
+            displayMsg(errorMsg);
+        }
+        errorSubmitCounter += 1;
+        submitTracker.innerText = submitTracker.innerText.replace(submitTracker.innerText[0], errorSubmitCounter);
+        if (errorSubmitCounter === 3) {
+            submitBtn.setAttribute("disabled", true);
+        }
     }
 });
